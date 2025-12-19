@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancer Risk Estimator</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container py-5">
+    <div class="header text-center mb-5 animate-fade-in">
+        <h1 class="display-4 fw-bold text-primary">Cancer Risk Estimator</h1>
+        <p class="lead text-muted">
+            Answer questions to get an educational estimate of general cancer risk factors
+        </p>
+    </div>
+
+    <div class="card shadow-lg p-4 animate-slide-up">
+        <form id="cancerForm">
+            <div class="row g-4">
+
+                <div class="col-md-6">
+                    <label class="form-label fw-bold">1. Age</label>
+                    <select class="form-select" id="age">
+                        <option value="0">Under 40</option>
+                        <option value="2">40–59</option>
+                        <option value="4">60+</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label fw-bold">2. Smoking History</label>
+                    <select class="form-select" id="smoking">
+                        <option value="0">Never smoked</option>
+                        <option value="3">Former smoker</option>
+                        <option value="5">Current smoker</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label fw-bold">3. Family History of Cancer</label>
+                    <select class="form-select" id="family">
+                        <option value="0">No</option>
+                        <option value="3">Yes (one relative)</option>
+                        <option value="5">Yes (multiple or close relatives)</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label fw-bold">4. Daily Alcohol Consumption</label>
+                    <select class="form-select" id="alcohol">
+                        <option value="0">None or occasional</option>
+                        <option value="2">Moderate</option>
+                        <option value="4">Heavy</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label fw-bold">5. Physical Activity</label>
+                    <select class="form-select" id="activity">
+                        <option value="0">Regular</option>
+                        <option value="2">Some</option>
+                        <option value="3">None</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label fw-bold">6. Diet</label>
+                    <select class="form-select" id="diet">
+                        <option value="0">5+ servings</option>
+                        <option value="1">3–4 servings</option>
+                        <option value="2">Less than 3</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label fw-bold">7. Sun Protection</label>
+                    <select class="form-select" id="sun">
+                        <option value="0">Always</option>
+                        <option value="2">Sometimes</option>
+                        <option value="3">Rarely</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label fw-bold">8. Regular Screening</label>
+                    <select class="form-select" id="screening">
+                        <option value="0">Yes</option>
+                        <option value="2">Somewhat</option>
+                        <option value="3">No</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="text-center mt-5">
+                <button type="button"
+                        class="btn btn-primary btn-lg px-5 shadow animate-pulse"
+                        onclick="calculateCancerRisk()">
+                    Estimate Risk
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <div id="result" class="mt-5"></div>
+</div>
+
+<!-- JavaScript -->
+<script src="script.js"></script>
+</body>
+</html>

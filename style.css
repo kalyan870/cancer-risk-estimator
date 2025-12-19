@@ -1,0 +1,86 @@
+body {
+    background: linear-gradient(135deg, #ffeef8, #ffc0e6);
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    max-width: 900px;
+    padding: 20px;
+}
+
+/* Animations */
+.animate-fade-in {
+    animation: fadeIn 1.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-slide-up {
+    opacity: 0;
+    animation: slideUp 0.8s ease-out forwards;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(13,110,253,0.6); }
+    70% { box-shadow: 0 0 0 20px rgba(13,110,253,0); }
+    100% { box-shadow: 0 0 0 0 rgba(13,110,253,0); }
+}
+
+/* Result Card */
+.risk-card {
+    position: relative;
+    border-radius: 25px;
+    overflow: hidden;
+    margin: 40px auto;
+    max-width: 650px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.8s ease;
+}
+
+.risk-card.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Rainbow Border */
+.risk-card::before {
+    content: '';
+    position: absolute;
+    inset: -5px;
+    background: linear-gradient(
+        45deg,
+        #ff006e, #ff8c00, #ffd60a,
+        #06ffa5, #00d4ff, #8b00ff
+    );
+    border-radius: 30px;
+    z-index: -1;
+    background-size: 400%;
+    animation: rainbowFlow 12s linear infinite;
+}
+
+@keyframes rainbowFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Risk Levels */
+.low { background: linear-gradient(135deg, #a8e6cf, #dcedc1); }
+.moderate { background: linear-gradient(135deg, #ffd3a5, #fddeb5); }
+.high { background: linear-gradient(135deg, #ff9aa2, #ffb7b2); }
+.very-high { background: linear-gradient(135deg, #ff6b6b, #ff8e8e); }
